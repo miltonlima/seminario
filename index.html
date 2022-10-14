@@ -12,31 +12,7 @@
   <script type="text/javascript" src="js/jquery-3.6.1.js"></script>
   <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
   <script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $("#cpf").mask("999.999.999-99");
-    });
-    $(document).ready(function () {
-      $("#cep").mask("99.999-99");
-    });
-    $(document).ready(function () {
-      $("#telefone").mask("(99)99999-999");
-    });
-    $(document).ready(function () {
-      $("#telefone").mask("(99)99999-9999");
-    });
-
-    function validarEmail() {
-      email = document.getElementById('email').value;
-      email2 = document.getElementById('confirma_email').value;
-      if (email != email2) {
-        alert('O e-mail de confirmação é diferente.');
-        document.getElementById('confirma_email').value = '';
-      }
-    }  
-  </script>
-
-
+  <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
@@ -139,7 +115,7 @@
       </div>
       <div class="form-group">
         <label for="title">Telefone</label>
-        <input type="text" class="form-control" id="telefone" name="telefone" required>
+        <input type="text" class="form-control" id="telefone" name="telefone" onkeypress="mask(this, telefone);" onblur="mask(this, telefone);" required>
       </div>
       <div class="form-group">
         <label for="title">Vínculo institucional</label>
@@ -182,7 +158,7 @@
       <div class="container">
         <div class="row">
           <div class="col text-center">
-            <input type="submit" class="btn btn-primary" value="Cadastrar" onclick="submitForm()">
+            <input type="submit" class="btn btn-primary" value="Cadastrar">
           </div>
         </div>
       </div>
