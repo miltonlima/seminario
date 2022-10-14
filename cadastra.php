@@ -26,9 +26,9 @@ $Conexao    = Conexao::getConnection();
 
 $sql = "insert into inscricao_seminario (nome, nome_artistico, cpf, data_nascimento, nacionalidade, naturalidade, email, endereco, complemento, bairro, cep, estado, cidade, telefone, vinculo_institucional, descricao_vinculo, data_registro) values('$nome', '$nome_artistico', '$cpf', '$data_nascimento', '$nacionalidade', '$naturalidade', '$email', '$endereco', '$complemento', '$bairro', '$cep', '$estado', '$cidade', '$telefone', '$vinculo_institucional', '$descricao_vinculo', CURRENT_TIMESTAMP)";
 
-echo $sql;
+//echo $sql;
 
-//$Conexao->query($sql);
+$Conexao->query($sql);
 
 
 
