@@ -20,12 +20,15 @@ $telefone = $_POST['telefone'];
 $vinculo_institucional = $_POST['vinculo_institucional'];
 $descricao_vinculo = $_POST['descricao_vinculo'];
 //$data_registro = $_POST['data_registro'];
+$data_nascimento = '1111-11-11';
 
 $Conexao    = Conexao::getConnection();
 
-$sql = "insert into inscricao_seminario (nome, nome_artistico, cpf, data_nascimento, nacionalidade, naturalidade, confirma_email, endereco, complemento, bairro, cep, estado, cidade, telefone, vinculo_institucional, descricao_vinculo, data_registro) values('$nome', '$nome_artistico', '$cpf', '$data_nascimento', '$nacionalidade', '$naturalidade', '$email', '$endereco', '$complemento', '$bairro', '$cep', '$estado', '$cidade', '$telefone', '$vinculo_institucional', '$descricao_vinculo', 'CURRENT_TIMESTAMP')";
+$sql = "insert into inscricao_seminario (nome, nome_artistico, cpf, data_nascimento, nacionalidade, naturalidade, email, endereco, complemento, bairro, cep, estado, cidade, telefone, vinculo_institucional, descricao_vinculo, data_registro) values('$nome', '$nome_artistico', '$cpf', '$data_nascimento', '$nacionalidade', '$naturalidade', '$email', '$endereco', '$complemento', '$bairro', '$cep', '$estado', '$cidade', '$telefone', '$vinculo_institucional', '$descricao_vinculo', CURRENT_TIMESTAMP)";
 
-$Conexao->query($sql);
+echo $sql;
+
+//$Conexao->query($sql);
 
 
 
