@@ -30,6 +30,8 @@ $sql = "insert into inscricao_seminario (nome, nome_artistico, cpf, data_nascime
 
 $Conexao->query($sql);
 
+header("location: sucesso.html");
+
 
 
 /*
