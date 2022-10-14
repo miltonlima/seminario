@@ -9,6 +9,17 @@
   <link href="bootstrap-5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="icon" type="image/x-icon" href="img/sesc.svg">
+  <script type="text/javascript" src="js/jquery-3.6.1.js"></script>
+  <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+  <script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#cpf").mask("999.999.999-99");
+    });
+    $(document).ready(function(){
+      $("#cep").mask("99.999-99");
+    });
+  </script>
 </head>
 
 <body>
@@ -49,11 +60,11 @@
       </div>
       <div class="form-group">
         <label for="title">E-mail</label>
-        <input type="text" class="form-control" id="email" name="email" required>
+        <input type="email" class="form-control" id="email" name="email" required>
       </div>
       <div class="form-group">
         <label for="title">Confirme seu email</label>
-        <input type="text" class="form-control" id="confirma_email" name="confirma_email" required>
+        <input type="email" class="form-control" id="confirma_email" name="confirma_email" required>
       </div>
       <div class="form-group">
         <label for="title">Endereço</label>
