@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <title>Seminário Internacional de Mediação Cultural</title>
   <link href="bootstrap-5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="img/sesc.svg">
+  <link rel="icon" type="image/x-icon" href="img/sesc.svg">
 </head>
 
 <body>
@@ -22,10 +22,10 @@
     </div>
   </nav>
   <div class="col-10 offset-1 col-md-6 offset-md-3 my-3">
-    <form method="post" action="cadastra.php">
+    <form method="post" action="cadastra.php" name="frmpost" id="frmpost">
       <div class="form-group">
         <label for="title">Nome completo</label>
-        <input type="text" class="form-control" id="nome" name="nome" required>
+        <input type="text" class="form-control" id="nome" name="nome" autocomplete="off" required>
       </div>
       <div class="form-group">
         <label for="title">Nome artístico</label>
@@ -120,7 +120,7 @@
           <option value="1">Não</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="title">Descrição vínculo</label>
         <input type="text" class="form-control" id="descricao_vinculo" name="descricao_vinculo"
           placeholder="Local do evento">
@@ -153,7 +153,7 @@
       <div class="container">
         <div class="row">
           <div class="col text-center">
-            <input type="submit" class="btn btn-primary" value="Cadastrar">
+            <input type="submit" class="btn btn-primary" value="Cadastrar" onclick="submitForm()">
           </div>
         </div>
       </div>
