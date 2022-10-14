@@ -1,9 +1,9 @@
 <?php
 
 define('DB_HOST', "192.168.0.214");
-define('DB_USER', "bpspessoasweb");
-define('DB_PASSWORD', "sqlwebbps");
-define('DB_NAME', "bpspessoasweb");
+define('DB_USER', "bmi");
+define('DB_PASSWORD', "bmi");
+define('DB_NAME', "bmi");
 define('DB_DRIVER', "sqlsrv");
 
 /*
