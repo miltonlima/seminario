@@ -51,5 +51,4 @@ if (!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message sent!';
-    echo 'aaaa';
 }
