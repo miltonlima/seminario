@@ -140,29 +140,36 @@ require_once "conexao.php";
                     <div class="btable"><a href="?seq=nome&order=<?= $o ?>&txtsearch=<?= $txt ?>">Nome</a></div>
                 </td>
                 <td>
+                    <div class="btable"><a href="?seq=data_nascimento&order=<?= $o ?>&txtsearch=<?= $txt ?>">Data de nascimento</a></div>
+                </td>
+                <td>
                     <div class="btable"><a href="?seq=email&order=<?= $o ?>&txtsearch=<?= $txt ?>">Email</a></div>
                 </td>
                 <td>
                     <div class="btable"><a href="?seq=CPF&order=<?= $o ?>&txtsearch=<?= $txt ?>">CPF</a></div>
                 </td>
                 <td>
-                    <div class="btable"><a href="?seq=id_pessoa&order=<?= $o ?>&txtsearch=<?= $txt ?>">ID</a></div>
+                    <div class="btable"><a href="?seq=id&order=<?= $o ?>&txtsearch=<?= $txt ?>">ID</a></div>
                 </td>
                 <td>
-                    <div class="btable"><a href="?seq=TEL_CONTATO&order=<?= $o ?>&txtsearch=<?= $txt ?>">Telefone</a></div>
+                    <div class="btable"><a href="?seq=telefone&order=<?= $o ?>&txtsearch=<?= $txt ?>">Telefone</a></div>
                 </td>
                 <td>
-                    <div class="btable"><a href="?seq=MATRICULA&order=<?= $o ?>&txtsearch=<?= $txt ?>">Endereço</a></div>
+                    <div class="btable"><a href="?seq=endereco&order=<?= $o ?>&txtsearch=<?= $txt ?>">Endereço</a></div>
+                </td>
+                <td>
+                    <div class="btable"><a href="?seq=cep&order=<?= $o ?>&txtsearch=<?= $txt ?>">Cep</a></div>
                 </td>
                 <td>
                     <div class="btable"><a href="?seq=data_registro&order=<?= $o ?>&txtsearch=<?= $txt ?>">Registro</a></div>
                 </td>
+                
             </tr>
             <?php
             try {
                 //echo "select CPF, data_registro, id_pessoa, MATRICULA, TEL_CONTATO, LTRIM(nome_pessoa) nome, LTRIM(nome_pessoa) email from BPSPESSOASWEB_PESSOAS where 1=1 $s $seq $p";
                 //echo "<br>";
-                $query = $Conexao->query("select CPF, CONVERT(VARCHAR(10), data_registro, 103) + ' ' + CONVERT(VARCHAR(8), data_registro, 108) as data_registro1, id, endereco, telefone, LTRIM(nome) nome, LTRIM(email) email from inscricao_seminario where 1=1 $s $seq $p");
+                $query = $Conexao->query("select CPF, CONVERT(VARCHAR(10), data_registro, 103) + ' ' + CONVERT(VARCHAR(8), data_registro, 108) as data_registro1, id, endereco, telefone, LTRIM(nome) nome, LTRIM(email) email, nome_artistico, data_nascimento, nacionalidade, naturalidade, endereco, complemento, bairro, cep, estado, vinculo_institucional, descricao_vinculo from inscricao_seminario where 1=1 $s $seq $p");
 
                 $objrs = $query->fetchAll();
             } catch (Exception $e) {
@@ -181,11 +188,13 @@ require_once "conexao.php";
                         <?php echo $ors['nome']; ?>
                         <div id="vline<?= $i; ?>" style="display: none; position: absolute;border: 1px solid #000000; background-color: #ffffff; padding: 5px;">aaaaaaaaa</div>
                     </td>
+                    <td><?php echo $ors['data_nascimento']; ?></td>
                     <td><?php echo $ors['email']; ?></td>
                     <td><?php echo $ors['CPF']; ?></td>
                     <td><?php echo $ors['id']; ?></td>
                     <td><?php echo $ors['telefone']; ?></td>
                     <td><?php echo $ors['endereco']; ?></td>
+                    <td><?php echo $ors['cep']; ?></td>
                     <td><?php echo $ors['data_registro1']; ?></td>
                 </tr>
                 
