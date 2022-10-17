@@ -36,6 +36,7 @@ $descricao_vinculo = $_POST['descricao_vinculo'];
 //$data_nascimento = '1111-11-11';
 
 $telefone = preg_replace( '/[^0-9]/', '', $telefone );
+$cpf = preg_replace( '/[^0-9]/', '', $cpf );
 
 $data_nascimento = strtotime($data_nascimento);
 $data_nascimento = date('Y-m-d',$data_nascimento);
