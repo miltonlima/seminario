@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This example shows making an SMTP connection without using authentication.
  */
@@ -42,7 +43,7 @@ $sql = "insert into inscricao_seminario (nome, nome_artistico, cpf, data_nascime
 
 $Conexao->query($sql);
 
-$query = $Conexao->query("select top(1) id as vid from inscricao_seminario order by id desc");
+$query = $Conexao->query("select top(1) id from inscricao_seminario order by id desc");
 $ors = $query->fetchAll();
 
 //Enviar e-mail
@@ -76,15 +77,15 @@ $mail->Subject = 'Inscrição realizada - Seminário Internacional de Mediaçao 
 //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
 //Replace the plain text body with one created manually
 //$mail->AltBody = 'This is a plain-text message body22';
-$mail->Body = "Sua inscrição número: $ors[0][id] foi realizada com sucesso.";
+$mail->Body = "Sua inscrição número: " . $ors[0]['id'] . " foi realizada com sucesso.";
 //Attach an image file
 //$mail->addAttachment('images/phpmailer_mini.png');
 
 //send the message, check for errors
 if (!$mail->send()) {
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
+  echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-    echo 'Message sent!';
+  echo 'Message sent!';
 }
 
 
