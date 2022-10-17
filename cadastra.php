@@ -33,7 +33,10 @@ $telefone = $_POST['telefone'];
 $vinculo_institucional = $_POST['vinculo_institucional'];
 $descricao_vinculo = $_POST['descricao_vinculo'];
 //$data_registro = $_POST['data_registro'];
-$data_nascimento = '1111-11-11';
+//$data_nascimento = '1111-11-11';
+
+$data_nascimento = strtotime($data_nascimento);
+$data_nascimento = date('Y-m-d',$data_nascimento);
 
 $Conexao    = Conexao::getConnection();
 
